@@ -13,3 +13,47 @@ body{
     text-align: center;
 }
 
+
+.logo{
+    margin-top: 1%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.start{
+    display: felx;
+    flex-direction: column;
+    margin:auto;
+}
+
+.head1{
+    font-size: 40px;
+    color: #3d0b7ae3;
+    font-weight: bold;
+}
+
+.head2{
+    font-size: 25px;
+    color: black;
+}
+.start_img{
+    width: 80%;
+    height: 50%; 
+    text-align: center;
+    
+}
+
+
+.btn-purple{
+    background-color: #3d0b7ae3;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+}
