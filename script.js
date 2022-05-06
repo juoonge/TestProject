@@ -1,12 +1,12 @@
-const titleContainer = document.querySelector("#start #input")
-const questionContainer = document.querySelector("#")
-const question = document.querySelector('#')
-const char = document.querySelector("#")
-const yBtn = document.querySelector("#");
-const nBtn = document.querySelector('#');
-const explain = document.querySelector("#")
-const image = document.querySelector("#")
-const resultContainer = document.querySelector("#")
+const titleContainer = document.querySelector("#start, #input");
+const questionContainer = document.querySelector(".question_container");
+const question = document.querySelector('#question');
+const type = document.querySelector("#type");
+const yBtn = document.querySelector(".answer-1_btn");
+const nBtn = document.querySelector('.answer-2_btn');
+const explain = document.querySelector(".result_show");
+const image = document.querySelector(".result_img");
+const resultContainer = document.querySelector("#result_container");
 
 const q = { // question Object 
     1 : {"title" : "질문 1", "type" : "char", "Y" : "네", "N" : "아니오"},
@@ -40,7 +40,8 @@ $("#start_button").addEventListener('click', ()=>{
 });
 
 yBtn.addEventListener('click', ()=>{
-
+    
+    updateQuestion()
 });
 
 nBtn.addEventListener('click', ()=>{
