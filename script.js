@@ -82,3 +82,8 @@ function prevent_multi_check(n) {
         }
     }
 }
+
+function open_result() {
+    document.getElementsByClassName("end_quesion")[0].style.display = 'none'
+    document.getElementsByClassName("result_container")[0].style.display = 'block'
+}
