@@ -18,30 +18,31 @@
         
         <h1 class="head1 mt-5 text-center" > 상남자 상여자 테스트</h1>
         <h2 class="head2 text-center">과연 당신은? </h2>
-        <img  class = "start_img mt-5" src = "nohongchul.png" >
-        
+        <img  class = "start_img mt-5" src = "nohongchul.png" >    
     </div>
 
     <div class = "input">  <!-- 이름 성별 입력 -->
-        <form method="get">
+        <form name = "info">
             <div>
                 <span style = "font-size: 20px; font-weight: bold;">이름:<span> 
-                <input class = "input_name" type ="text" name = "my_name" size="20">
+                <input id="name" class = "input_name" type ="text" name = "my_name" size="20">
             </div>
             <div>
                 <span style = "font-size: 20px; font-weight: bold;">성별:</span>
-                <input id="btn1" type ="checkbox" name="gender" value="male">
+                <input id="btn1" type ="checkbox" name="gender" value="male" onclick="prevent_multi_check(this)">
                 <label for="btn1"></label><span style="font-size: 30px; font-weight: bold; color:skyblue;">남자</span>
-                <input id="btn2" type ="checkbox" name="gender" value="female">
+                <input id="btn2" type ="checkbox" name="gender" value="female" onclick="prevent_multi_check(this)">
                 <label for="btn2"></label><span style="font-size: 30px; font-weight: bold; color:pink">여자</span>
-                
             </div>
+            <input id="start_button" class="btn btn-purple mt-5" type="button" value="테스트 시작하기" onclick="start()"/>
         </form>
-        <button id="start_button" class="btn btn-purple mt-5" type="button">테스트 시작하기</button>
     </div>    
    
 
     <div class="cont question_container"> <!-- 질문 화면 -->
+        <div class="progress mt-5">
+            <div class="progress-bar" role="progressbar" style="width: calc(100/12*1%)"></div>
+        </div>
         <h3 class="question_logo">Q.</h3>
         <p id="question" class="question">질문</p>
         <div class="progress-bar" style="width: calc(100/12*1%)"></div><!-- 클릭시 바 active -->
