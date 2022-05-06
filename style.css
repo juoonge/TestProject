@@ -79,23 +79,24 @@ input.input_name{  /*이름 input*/
 
 }
 
-input.btn1{  /*input 남자 버튼*/
-    background-color: skyblue;
-    padding: 10px 30px;
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-}
+label { /*남녀선택 체크박스*/
+    width: 40px;
+    height: 40px;
+    border: 5px solid #3d0b7ae3;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked + label {
+    border-color: rgb(46, 186, 46);
+  }
 
-input.btn2{  /*input 여자 버튼*/
-    background-color: pink;
-    padding: 10px 30px;
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-}
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  
 .cont{
     width : 100%;
     height : 100%;
