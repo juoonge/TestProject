@@ -125,10 +125,9 @@ label { /*남녀선택 체크박스*/
     color: black;
 }
 
-.answer_box{/* 질문 답: yes, no */
+.answer_box{/* 질문 답 버튼: yes, no */
     width: 100%;
-    margin-left:440px;
-    display: flex;
+    margin: auto;
     flex-direction: row;
     text-align: center;
 }
@@ -166,36 +165,49 @@ label { /*남녀선택 체크박스*/
     border-radius: 20px;
 }
 .end_question{
-    display: none; 
+    /* display: none;   */
+    margin:auto;
+    text-align: center;
+    transition: all 0.2s linear;
 }
-.result_btn{/* 결과 확인 버튼 */
-    display: none; 
-    border-radius: 40px;
-    width:200px;
-    height:200px;
-    margin-left:460px;
-    margin-top:100px;
-}
-
-.result_btn>button:active{/* 버튼 눌렀을때 효과가 나와야하는데 안나옴 */
+.end_question>button:active{/*결과 버튼 눌렀을때 효과 나옴 */
     box-shadow:3px 3px 0 rgb(0,0,0,0.5);
     position:relative;
-    top:2px;
+    top:10px;
+}
+.end_question>button:hover{/* 마우스 버튼에 올린 경우 효과 */
+    transform: scale(1.2);
+    box-shadow:1px 1px 0 rgb(0,0,0,0.5);
+    position:relative;
+    top:10px;
+}
+.result_btn{/* 결과 확인 버튼 */
+    background-color: white;
+    border-radius: 20px;
+    padding-left: 10px;
+    width:250px;
+    height:250px;
+}
+.btn_ment{/* 누르시오 멘트 */
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+    margin-top: 50px;
 }
 
+
+
 .result_container{
-    display:none;
+    /* display:none; */
+    text-align: center;
+    margin:auto;
 }
-.result_logo{
-    display: flex;
-}
+
 .result_img{
     text-align: center;
     width:200px;
     height:200px;
     border-radius: 50px;
-    margin-left:460px;
-    margin-top:100px;
 }
 .result_show{
     margin-top:100px;
