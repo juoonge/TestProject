@@ -1,12 +1,12 @@
-const titleContainer = document.querySelector("#")
+const titleContainer = document.querySelector("#start #input")
 const questionContainer = document.querySelector("#")
+const question = document.querySelector('#')
 const char = document.querySelector("#")
 const yBtn = document.querySelector("#");
 const nBtn = document.querySelector('#');
 const explain = document.querySelector("#")
 const image = document.querySelector("#")
 const resultContainer = document.querySelector("#")
-
 
 const q = { // question Object 
     1 : {"title" : "질문 1", "type" : "char", "Y" : "네", "N" : "아니오"},
@@ -33,7 +33,7 @@ const result = { // 최종적으로 gender 추가해야 함
 let num = 1; // 질문 횟수 카운트
 let answer = ''; // 결과 저장 후 출력할 변수
 
-titleBtn.addEventListener('click', ()=>{
+$("#start_button").addEventListener('click', ()=>{
     titleContainer.style.display = 'none';
     questionContainer.style.display = 'block';
     updateQuestion();
@@ -54,6 +54,7 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         
 
     } else {
-
+        //$("#").setAttribute('style', `width : calc(100/13*${num}%)`)
+        
     }
 }
