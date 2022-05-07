@@ -165,7 +165,7 @@ label { /*남녀선택 체크박스*/
     border-radius: 20px;
 }
 .end_question{
-    /* display: none;   */
+    display: none;
     margin:auto;
     text-align: center;
     transition: all 0.2s linear;
@@ -198,7 +198,7 @@ label { /*남녀선택 체크박스*/
 
 
 .result_container{
-    /* display:none; */
+    display:none;
     text-align: center;
     margin:auto;
 }
