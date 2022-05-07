@@ -35,6 +35,8 @@ const result = { // 최종적으로 gender 추가해야 함
 
 let num = 1; // 질문 횟수 카운트
 let answer = ''; // 결과 저장 후 출력할 변수
+let countYes = 0; // yes 대답 횟수 저장 변수
+let gender; 
 
 function start() {
     if (info.name.value == "") {
@@ -44,15 +46,27 @@ function start() {
         alert("성별을 선택해주세요.");
         return
     } else {
+        const name = document.getElementById('name').value; // 이름 저장
+
+        // 성별 저장
+        
+        for (let i = 0; i < 2; i++) {
+            if (document.getElementsByName("gender")[i].checked == true) {  // 체크되어 있다면
+                gender = document.getElementsByName("gender")[i].value; // 체크된 값 성별에 저장
+                break;
+            }
+        }
+
         titleContainer[0].style.display = 'none';
         titleContainer[1].style.display = 'none';
         questionContainer.style.display = 'block';
+        
         updateQuestion();
     }
 }
 
 yBtn.addEventListener('click', ()=>{
-    
+    countYes++;
     updateQuestion()
 });
 
@@ -65,7 +79,18 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         questionContainer.style.display = 'none';
         resultContainer.style.display = "block";
         
-
+        // img 추가해서 바꿔야함
+        if(countYes >= 11) {    // 상남자(여자) 일 때
+            image.setAttribute('src', 'nohongchul.png');  // 이미지 변경
+            explain.innerHTML = `당신은 상${gender}입니다.`; // 결과 문구 변경
+        } else if(countYes < 11 && countYes >= 6) { // 중남자(여자) 일 때
+            image.setAttribute('src', 'nohongchul.png');  // 이미지 변경
+            explain.innerHTML = `당신은 중${gender}입니다.`;  // 결과 문구 변경
+        } else {    // 하남자(여자) 일 때
+            image.setAttribute('src', 'nohongchul.png');  // 이미지 변경
+            explain.innerHTML = `당신은 하${gender}"입니다.`;  // 결과 문구 변경
+  // 결과 문구 변경
+        }
     } else {
         progress.setAttribute('style', `width : calc(100/13*${num}%)`);
         question.innerHTML = q[num].title;
