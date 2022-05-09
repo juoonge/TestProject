@@ -39,7 +39,11 @@ const result = { // 최종적으로 gender 추가해야 함
               "feature" : "결과에 굉장히 만족하고 있음.\
                           <br>솔직하게 테스트 하면 결과가 달라졌을걸 알고 있음.\
                           <br>친구 중에 하남자(여자) 나올만한 애가 한명 떠오름.",
+<<<<<<< HEAD
               "img": "./src/상남자(여자).png"},
+=======
+              "img": "./src/상.png"},
+>>>>>>> f548b32d79344d230b5f5ae14cdfba9881e568b6
     "middle": {"pos": "중", 
                "explain": "어디에도 속하지 못한 당신.\
                           <br>어정쩡하게 살지말고 하나만 합시다.",
@@ -47,14 +51,22 @@ const result = { // 최종적으로 gender 추가해야 함
                             <br>상남자(여자) 소리를 듣고 싶지만, 한번도 들은적 없음.\
                             <br>답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음.\
                             <br>테스트 다시 한번 해볼 예정임.",
+<<<<<<< HEAD
                "img": "./src/중남자(여자).png"},
+=======
+               "img": "./src/중.png"},
+>>>>>>> f548b32d79344d230b5f5ae14cdfba9881e568b6
     "lower": {"pos": "하", 
-              "explain": "이름을 박쫄환으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
+              "explain": "이름을 <div class='hahaha' style='display:inline'>이름</div>으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
                           <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요?", 
               "feature": "본인 스스로가 가장 잘 알고 있음.\
                           <br>친구들한테 구질구질하다는 소리 많이 들음.\
                           <br>테스트 하면서 뜨끔한게 한두개가 아님.",
+<<<<<<< HEAD
               "img": "./src/하남자(하여자).png"}
+=======
+              "img": "./src/하.png"}
+>>>>>>> f548b32d79344d230b5f5ae14cdfba9881e568b6
 }
 
 let num = 1; // 질문 횟수 카운트
@@ -103,6 +115,9 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         resultContainer.style.display = "block";
 
         countYes >= 11 ? show_result("upper") : 11 > countYes >= 6 ? show_result("middle") : show_result("lower");
+        
+        let hahaha = document.querySelector(".hahaha");
+        hahaha.innerHTML = (name[0] + "쫄" + name[2]);
     } else {
         progress.setAttribute('style', `width : calc(100/13*${num}%)`);
         question.innerHTML = q[num].title;
