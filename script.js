@@ -11,6 +11,7 @@ const resultContainer = document.querySelector(".end_question");
 const resultType = document.querySelector(".result_show");
 const image = document.querySelector(".result_img");
 const explain = document.querySelector(".explain");
+const feature = document.querySelector(".feature");
 const progress = document.querySelector('.progress-bar');
 
 const q = { // question Object 
@@ -30,15 +31,21 @@ const q = { // question Object
 }
 
 const result = { // 최종적으로 gender 추가해야 함
+
     "upper": {"pos": "상", 
-              "explain": "#", 
+              "explain": "#",
+              "feature" : "#",
               "img": ".src/상.png"},
     "middle": {"pos": "중", 
-               "explain": "#", 
+               "explain": "#",
+               "feacher" : "테스트가 억지라고 자기 위로 하고 있음.\
+                            <br>상남자(여자) 소리를 듣고 싶지만, 한번도 들은적 없음.\
+                            <br>답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음.",
                "img": ".src/중.png"},
     "lower": {"pos": "하", 
               "explain": "이름을 박쫄환으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
                           <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요? <br>특징 - 본인 스스로가 가장 잘 알고 있음-", 
+              "feature": "본인 스스로가 가장 잘 알고 있음",
               "img": ".src/하.png"}
 }
 
@@ -103,6 +110,8 @@ function show_result(answer) {
     image.setAttribute('src', result[answer].img); 
     resultType.innerHTML = `${name}님은 ${result[answer].pos + gender}입니다.`; 
     explain.innerHTML = result[answer].explain;
+    feature.innerHTML = result[answer].feacher;
+
 }
 
 function prevent_multi_check(n) {
