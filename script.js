@@ -96,11 +96,9 @@ function show_result(answer) {
 
 function prevent_multi_check(n) {
     let obj = document.getElementsByName("gender");
-    for (let i=0; i < obj.length; i++) {
-        if (obj[i] != n) {
+    for (let i=0; i < obj.length; i++)
+        if (obj[i] != n)
             obj[i].checked = false;
-        }
-    }
 }
 
 function open_result() {
