@@ -30,9 +30,16 @@ const q = { // question Object
 }
 
 const result = { // 최종적으로 gender 추가해야 함
-    "upper": {"pos": "상", "explain": "#", "img": "#"},
-    "middle": {"pos": "중", "explain": "#", "img": "#"},
-    "lower": {"pos": "하", "explain": "#", "img": "#"}
+    "upper": {"pos": "상", 
+              "explain": "#", 
+              "img": ".src/상.png"},
+    "middle": {"pos": "중", 
+               "explain": "#", 
+               "img": ".src/중.png"},
+    "lower": {"pos": "하", 
+              "explain": "이름을 박쫄환으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
+                          <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요? <br>특징 - 본인 스스로가 가장 잘 알고 있음-", 
+              "img": ".src/하.png"}
 }
 
 let num = 1; // 질문 횟수 카운트
@@ -80,7 +87,7 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         questionContainer.style.display = 'none';
         resultContainer.style.display = "block";
 
-        countYes >= 11 ? show_result("upper") : 11 > countYes >= 6 ? show_result("middle") : show_result("lower")
+        countYes >= 11 ? show_result("upper") : 11 > countYes >= 6 ? show_result("middle") : show_result("lower");
     } else {
         progress.setAttribute('style', `width : calc(100/13*${num}%)`);
         question.innerHTML = q[num].title;
