@@ -11,6 +11,7 @@ const resultContainer = document.querySelector(".end_question");
 const resultType = document.querySelector(".result_show");
 const image = document.querySelector(".result_img");
 const explain = document.querySelector(".explain");
+const feature = document.querySelector(".feature");
 const progress = document.querySelector('.progress-bar');
 
 const q = { // question Object 
@@ -29,14 +30,23 @@ const q = { // question Object
     13 : {"title" : "질문 13", "contents" : "스벅에서 주문하려는 당신..주문할 때는 당연히?", "img":"./src/", "type" : "char", "Y" : "절대 6글자를 넘지 않는다..아아!", "N" : "커피에는 말이야..낭만이 있다고. 본인만의 레시피를 줄줄 읊음."}
 }
 
-const feature1 = {};
-const feature2 = {1: "테스트가 억지라고 자기 위로 하고 있음.", 2: "상남자(여자) 소리를 듣고 싶지만, 한번도 들은적 없음.", 3: "답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음."};
-const feacher3 = {1: "본인 스스로가 가장 잘 알고 있음"};
-
 const result = { // 최종적으로 gender 추가해야 함
-    "upper": {"pos": "상", "explain": "#", "img": "#"},
-    "middle": {"pos": "중", "explain": "어디에도 속하지 못한 당신 어정쩡하게 살지말고 하나만 합시다.", "img": "#"},
-    "lower": {"pos": "하", "explain": "당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다. 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요?", "img": "#"}
+
+    "upper": {"pos": "상", 
+              "explain": "#",
+              "feature" : "#",
+              "img": ".src/상.png"},
+    "middle": {"pos": "중", 
+               "explain": "#",
+               "feacher" : "테스트가 억지라고 자기 위로 하고 있음.\
+                            <br>상남자(여자) 소리를 듣고 싶지만, 한번도 들은적 없음.\
+                            <br>답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음.",
+               "img": ".src/중.png"},
+    "lower": {"pos": "하", 
+              "explain": "이름을 박쫄환으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
+                          <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요? <br>특징 - 본인 스스로가 가장 잘 알고 있음-", 
+              "feature": "본인 스스로가 가장 잘 알고 있음",
+              "img": ".src/하.png"}
 }
 
 let num = 1; // 질문 횟수 카운트
@@ -84,7 +94,7 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         questionContainer.style.display = 'none';
         resultContainer.style.display = "block";
 
-        countYes >= 11 ? show_result("upper") : 11 > countYes >= 6 ? show_result("middle") : show_result("lower")
+        countYes >= 11 ? show_result("upper") : 11 > countYes >= 6 ? show_result("middle") : show_result("lower");
     } else {
         progress.setAttribute('style', `width : calc(100/13*${num}%)`);
         question.innerHTML = q[num].title;
@@ -100,6 +110,8 @@ function show_result(answer) {
     image.setAttribute('src', result[answer].img); 
     resultType.innerHTML = `${name}님은 ${result[answer].pos + gender}입니다.`; 
     explain.innerHTML = result[answer].explain;
+    feature.innerHTML = result[answer].feacher;
+
 }
 
 function prevent_multi_check(n) {
