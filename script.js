@@ -33,19 +33,26 @@ const q = { // question Object
 const result = { // 최종적으로 gender 추가해야 함
 
     "upper": {"pos": "상", 
-              "explain": "#",
-              "feature" : "#",
+              "explain": "축하합니다! 당신은 상남자/여자입니다.\
+                         <br>태생부터 상남자/여자 유전자를 가지고 태어나셨네요.\
+                        <br>앞으로도 진정한 상남자/여자의 표본이 되어주세요!",
+              "feature" : "결과에 굉장히 만족하고 있음.\
+                          <br>솔직하게 테스트 하면 결과가 달라졌을걸 알고 있음.\
+                          <br>친구 중에 하남자(여자) 나올만한 애가 한명 떠오름.",
               "img": ".src/상.png"},
     "middle": {"pos": "중", 
                "explain": "#",
                "feacher" : "테스트가 억지라고 자기 위로 하고 있음.\
                             <br>상남자(여자) 소리를 듣고 싶지만, 한번도 들은적 없음.\
-                            <br>답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음.",
+                            <br>답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음.\
+                            <br>테스트 다시 한번 해볼 예정임.",
                "img": ".src/중.png"},
     "lower": {"pos": "하", 
               "explain": "이름을 <div class='hahaha' style='display:inline'>이름</div>으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
-                          <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요? <br>특징 - 본인 스스로가 가장 잘 알고 있음-", 
-              "feature": "본인 스스로가 가장 잘 알고 있음",
+                          <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요?", 
+              "feature": "본인 스스로가 가장 잘 알고 있음.\
+                          <br>친구들한테 구질구질하다는 소리 많이 들음.\
+                          <br>테스트 하면서 뜨끔한게 한두개가 아님.",
               "img": ".src/하.png"}
 }
 
@@ -113,7 +120,7 @@ function show_result(answer) {
     image.setAttribute('src', result[answer].img); 
     resultType.innerHTML = `${name}님은 ${result[answer].pos + gender}입니다.`; 
     explain.innerHTML = result[answer].explain;
-    feature.innerHTML = result[answer].feacher;
+    feature.innerHTML = result[answer].feature;
 
 }
 
