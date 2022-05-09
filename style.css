@@ -195,8 +195,6 @@ label { /*남녀선택 체크박스*/
     margin-top: 50px;
 }
 
-
-
 .result_container{
     display:none;
     text-align: center;
@@ -217,5 +215,28 @@ label { /*남녀선택 체크박스*/
 }
 
 @media screen and (max-width:768px){
-    
+    .input{
+        margin-top:100px;
+    }
+    .question_logo{
+        font-size:15px;
+    }
+    .question{
+        font-size:20px;
+        margin-top:50px;
+    }
+    .answer-1_btn{
+        margin:10px;
+        font-size:18px ;
+    }
+    .answer-2_btn{
+        margin:10px;
+        font-size:18px ;
+    }
+    .btn_ment{
+        font-size:40px;
+    }
+    .result_show{
+        font-size:40px;
+    }
 }
