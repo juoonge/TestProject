@@ -43,7 +43,7 @@ const result = { // 최종적으로 gender 추가해야 함
                             <br>답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음.",
                "img": ".src/중.png"},
     "lower": {"pos": "하", 
-              "explain": "이름을 박쫄환으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
+              "explain": "이름을 <div class='hahaha' style='display:inline'>이름</div>으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
                           <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요? <br>특징 - 본인 스스로가 가장 잘 알고 있음-", 
               "feature": "본인 스스로가 가장 잘 알고 있음",
               "img": ".src/하.png"}
@@ -95,6 +95,9 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         resultContainer.style.display = "block";
 
         countYes >= 11 ? show_result("upper") : 11 > countYes >= 6 ? show_result("middle") : show_result("lower");
+        
+        let hahaha = document.querySelector(".hahaha");
+        hahaha.innerHTML = (name[0] + "쫄" + name[2]);
     } else {
         progress.setAttribute('style', `width : calc(100/13*${num}%)`);
         question.innerHTML = q[num].title;
