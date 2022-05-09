@@ -2,6 +2,7 @@ const titleContainer = document.querySelectorAll(".start, .input");
 const titleBtn = document.querySelector(".info")
 const questionContainer = document.querySelector(".question_container");
 const question = document.querySelector('.question_logo');
+const qImg = document.querySelector('.question_img');
 const contents = document.querySelector('#question');
 const type = document.querySelector("#type");
 const yBtn = document.querySelector(".answer-1_btn");
@@ -13,19 +14,19 @@ const explain = document.querySelector(".explain");
 const progress = document.querySelector('.progress-bar');
 
 const q = { // question Object 
-    1 : {"title" : "질문 1", "contents" : "휴대폰 케이스 안하고 다님", "type" : "char", "Y" : "네", "N" : "아니오"},
-    2 : {"title" : "질문 2", "contents" : "술 마실 때 컨디션 안 마심", "type" : "char", "Y" : "네", "N" : "아니오"},
-    3 : {"title" : "질문 3", "contents" : "추워도 자켓 안 입음", "type" : "char", "Y" : "네", "N" : "아니오"},
-    4 : {"title" : "질문 4", "contents" : "음식점에서 쿠폰 안 받음", "type" : "char", "Y" : "네", "N" : "아니오"},
-    5 : {"title" : "질문 5", "contents" : "배민 리뷰이벤트 참여 안함", "type" : "char", "Y" : "네", "N" : "아니오"},
-    6 : {"title" : "질문 6", "contents" : "카드 안 쓰고 현금 씀. 그리고 거스름돈 안 받음", "type" : "char", "Y" : "네", "N" : "아니오"},
-    7 : {"title" : "질문 7", "contents" : "약속 늦어도 걸어감", "type" : "char", "Y" : "네", "N" : "아니오"},
-    8 : {"title" : "질문 8", "contents" : "라면 먹을 때 앞접시 안씀", "type" : "char", "Y" : "네", "N" : "아니오"},
-    9 : {"title" : "질문 9", "contents" : "밥상에 고기 없으면 안 먹음", "type" : "char", "Y" : "네", "N" : "아니오"},
-    10 : {"title" : "질문 10", "contents" : "피곤하면 아무데서나 잠. 주차장에서도 잘 수 있음", "type" : "char", "Y" : "네", "N" : "아니오"},
-    11 : {"title" : "질문 11", "contents" : "메뚜기 100가지 종류를 알고 있음", "type" : "char", "Y" : "네", "N" : "아니오"},
-    12 : {"title" : "질문 12", "contents" : "길 몰라도 지도앱 절대 안 켬", "type" : "char", "Y" : "네", "N" : "아니오"},
-    13 : {"title" : "질문 13", "contents" : "유자차에 휘핑크림 추가해서 마심", "type" : "char", "Y" : "네", "N" : "아니오"}
+    1 : {"title" : "질문 1", "contents" : "휴대폰을 새로 산 당신. 휴대폰 케이스는 어떤 걸 끼울까?", "img":"./src/케이스.png", "type" : "char", "Y" : "케이스..? 그게 뭔데", "N" : "이미 끼울지 다 생각해뒀지~ 바로 장착"},
+    2 : {"title" : "질문 2", "contents" : "술자리에서 알딸딸해진 채로 귀가하는데, 눈 앞에 편의점이 보인다면?", "img":"./src/컨디션.png", "type" : "char", "Y" : "집 가서 마시려고 술 한 병 더 삼", "N" : "내 속은 소중해..컨디션 or 초코에몽 사서 감"},
+    3 : {"title" : "질문 3", "contents" : "외출을 하려고 문을 열었는데 생각보다 바람이 차다..", "img":"./src/추운날.png", "type" : "char", "Y" : "뛰면 몸에서 열 나!", "N" : "이미 롱패딩 입고 김밥 패션으로 거리를 활보하는 중임"},
+    4 : {"title" : "질문 4", "contents" : "식당에서 음식을 포장하고 있는데 가게 주인께서 포인트를 챙겨주시려고 한다.", "img":"./src/배달쿠폰.png", "type" : "char", "Y" : "애초에 쿠폰 존재도 모르고 있음. 밥 다 먹고 봉투 채로 버림", "N" : "냉장고에 붙여놓고 10장 다 채워가면 설레서 잠 못 잠."},
+    5 : {"title" : "질문 5", "contents" : "간만에 배달을 시켜서 먹으려는데 리뷰 이벤트를 하고 있다면?", "img":"./src/리뷰이벤트.png", "type" : "char", "Y" : "먹기도 바쁜데 뭔 사진찍고 글을 쓰냐. 안 합니다.", "N" : "사진찍고 글만 쓰면 되는 건데 이걸 안 해??? 당연히 참여합니다."},
+    6 : {"title" : "질문 6", "contents" : "깻잎을 먹으려고 집었는데 두 장이 붙어서 올라와버렸다.", "img":"./src/깻잎.png", "type" : "char", "Y" : "내가 잡은 건 한 방에 먹는다!", "N" : "여러 개 먹으면 짜서 못 먹어..어떻게든 떼어낸다."},
+    7 : {"title" : "질문 7", "contents" : "오늘은 약속이 있는 날. 그런데 시간을 잘못 봐서 늦을 거 같다.", "img":"./src/", "type" : "char", "Y" : "원래 약속은 1시간 뒤에 도착하는 게 국룰. 친구들도 적응해서 집에서 아직 자고 있음.", "N" : "약속은 꼭 지켜야지. ㅠㅠ 바로 택시타고 달려간다."},
+    8 : {"title" : "질문 8", "contents" : "라면을 먹으려고 열심히 끓이고 당신은...", "img":"./src/라면앞접시.gif", "type" : "char", "Y" : "어차피 나 혼자 먹는 건데 뭐. 그냥 냄비 채로 먹음", "N" : "앞접시는 필수지~!~!"},
+    9 : {"title" : "질문 9", "contents" : "친구가 밥을 해준다고 해서 자취방에 놀러갔는데 고기 반찬이 없다면?", "img":"./src/밥상고기.png", "type" : "char", "Y" : "고기 없는 밥상은 인정할 수 없다. 바로 엎어버린다.", "N" : '"뭐..고기 없어도 잘 먹어~" 그냥 먹는다.'},
+    10 : {"title" : "질문 10", "contents" : "모임에서 술을 너무 많이 마신 나머지 집까지 가기가 너무 힘들다면?", "img":"./src/길바닥.png", "type" : "char", "Y" : '"아, 몰라. 오늘부터 여기가 내 집이다!" 그냥 주차장에서 잠', "N" : "이 험난한 세상에 무슨 꼴을 당하려고? 귀소본능 필수야"},
+    11 : {"title" : "질문 11", "contents" : "냉면을 먹으려고 하는데 식당에서 가위를 안 줬을 때", "img":"./src/냉면가위.png", "type" : "char", "Y" : "귀찮은데 그냥 먹지 뭐", "N" : "사장님, 여기 가위 좀 주세요!"},
+    12 : {"title" : "질문 12", "contents" : "어느 날 아무생각 없이 길을 걷다 정신차리니 길을 잃어버리고 마는데..", "img":"./src/지도.png", "type" : "char", "Y" : "여행하는 셈치고 그냥 가자~!", "N" : "이러다 이상한 길로 새는 거 아니야..? 바로 지도앱을 켠다."},
+    13 : {"title" : "질문 13", "contents" : "스벅에서 주문하려는 당신..주문할 때는 당연히?", "img":"./src/", "type" : "char", "Y" : "절대 6글자를 넘지 않는다..아아!", "N" : "커피에는 말이야..낭만이 있다고. 본인만의 레시피를 줄줄 읊음."}
 }
 
 const result = { // 최종적으로 gender 추가해야 함
@@ -84,6 +85,7 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         progress.setAttribute('style', `width : calc(100/13*${num}%)`);
         question.innerHTML = q[num].title;
         contents.innerHTML = q[num].contents;
+        qImg.setAttribute('src', q[String(num)].img);
         num++;
     }
 }
