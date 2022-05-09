@@ -44,7 +44,7 @@ const result = { // 최종적으로 gender 추가해야 함
                "img": ".src/중.png"},
     "lower": {"pos": "하", 
               "explain": "이름을 박쫄환으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
-                          <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요? <br>특징 - 본인 스스로가 가장 잘 알고 있음-", 
+                          <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요?", 
               "feature": "본인 스스로가 가장 잘 알고 있음",
               "img": ".src/하.png"}
 }
@@ -110,7 +110,7 @@ function show_result(answer) {
     image.setAttribute('src', result[answer].img); 
     resultType.innerHTML = `${name}님은 ${result[answer].pos + gender}입니다.`; 
     explain.innerHTML = result[answer].explain;
-    feature.innerHTML = result[answer].feacher;
+    feature.innerHTML = result[answer].feature;
 
 }
 
