@@ -86,6 +86,8 @@ function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
         question.innerHTML = q[num].title;
         contents.innerHTML = q[num].contents;
         qImg.setAttribute('src', q[String(num)].img);
+        yBtn.innerHTML = q[num].Y;
+        nBtn.innerHTML = q[num].N;
         num++;
     }
 }
