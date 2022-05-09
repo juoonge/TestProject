@@ -13,8 +13,6 @@ body{
     text-align: center;
 }
 
-
-
 .logo{
     margin-top: 1%;
     text-align: center;
@@ -80,6 +78,7 @@ input.input_name{  /*이름 input*/
 }
 
 label { /*남녀선택 체크박스*/
+    margin-top: 7%;
     width: 40px;
     height: 40px;
     border: 5px solid #3d0b7ae3;
@@ -146,19 +145,19 @@ label { /*남녀선택 체크박스*/
 }
 
 .answer-1_btn{/* yes 버튼 */
-    margin:50px;
+    margin: auto;
     background-color: crimson;
     padding: 10px 30px;
-    font-size:30px;
+    font-size:20px;
     color: white;
     font-weight: bold;
     border-radius: 20px;
 }
 .answer-2_btn{/* no 버튼 */
-    margin:50px;
+    margin:auto;
     background-color: crimson;
     padding: 10px 30px;
-    font-size:30px;
+    font-size:20px;
     color: white;
     font-weight: bold;
     border-radius: 20px;
@@ -212,6 +211,10 @@ label { /*남녀선택 체크박스*/
     font-size: 50px;
     color: black;
     font-weight: bold;
+}
+
+.feature_title {
+    text-align: center;
 }
 
 @media screen and (max-width:768px){
