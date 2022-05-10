@@ -43,11 +43,11 @@ const result = { // 최종적으로 gender 추가해야 함
     "middle": {"pos": "중", 
                "explain": "어디에도 속하지 못한 당신.\
                           <br>어정쩡하게 살지말고 하나만 합시다.",
-               "feacher" : "테스트가 억지라고 자기 위로 하고 있음.\
+               "feature" : "테스트가 억지라고 자기 위로 하고 있음.\
                             <br>상남자(여자) 소리를 듣고 싶지만, 한번도 들은적 없음.\
                             <br>답변 할 때, 사실 거짓말로 상남자 같은거 체크한거 있음.\
                             <br>테스트 다시 한번 해볼 예정임.",
-               "img": "./src/중.png"},
+               "img": "./src/중.jpg"},
     "lower": {"pos": "하", 
               "explain": "이름을 <div class='hahaha' style='display:inline'>이름</div>으로 개명한는 것을 추천드립니다.<br> 당신에게서 상남자의 세포는 찾아볼 수 없을 정도입니다.\
                           <br> 평생 하남자로 살 것이 아니라면 집나간 상남자 세포를 잡아오는건 어떨까요?", 
@@ -97,7 +97,7 @@ function updateQuestion() {
         questionContainer.style.display = 'none';
         resultContainer.style.display = "block";
 
-        countYes >= 11 ? show_result("upper") : 11 > countYes >= 6 ? show_result("middle") : show_result("lower");
+        (countYes >= 11) ? show_result("upper") : (11 > countYes && countYes >= 6) ? show_result("middle") : show_result("lower");
         
         let hahaha = document.querySelector(".hahaha");
         hahaha.innerHTML = (name[0] + "쫄" + name[2]);
