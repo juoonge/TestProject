@@ -169,23 +169,21 @@ label { /*남녀선택 체크박스*/
     text-align: center;
     transition: all 0.2s linear;
 }
-.end_question>button:active{/*결과 버튼 눌렀을때 효과 나옴 */
+.end_question>img:active{/*결과 버튼 눌렀을때 효과 나옴 */
     box-shadow:3px 3px 0 rgb(0,0,0,0.5);
     position:relative;
     top:10px;
 }
-.end_question>button:hover{/* 마우스 버튼에 올린 경우 효과 */
+.end_question>img:hover{/* 마우스 버튼에 올린 경우 효과 */
     transform: scale(1.2);
     box-shadow:1px 1px 0 rgb(0,0,0,0.5);
     position:relative;
     top:10px;
 }
 .result_btn{/* 결과 확인 버튼 */
-    background-color: white;
-    border-radius: 20px;
     padding-left: 10px;
-    width:250px;
-    height:250px;
+    width:300px;
+    height:200px;
 }
 .btn_ment{/* 누르시오 멘트 */
     font-size: 50px;
