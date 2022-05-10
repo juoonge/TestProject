@@ -71,15 +71,9 @@ function start() {
         alert("성별을 선택해주세요.");
         return
     } else {
-        name = document.getElementById('name').value; // 이름 저장
+        name = document.getElementById('name').value;
 
-        // 성별 저장
-        for (let i = 0; i < 2; i++) {
-            if (document.getElementsByName("gender")[i].checked == true) {  // 체크되어 있다면
-                gender = document.getElementsByName("gender")[i].value; // 체크된 값 성별에 저장
-                break;
-            }
-        }
+        gender = (info.gender[0].checked == true) ? info.gender[0].value : info.gender[1].value;
 
         titleContainer[0].style.display = 'none';
         titleContainer[1].style.display = 'none';
@@ -98,8 +92,8 @@ nBtn.addEventListener('click', ()=>{
     updateQuestion();
 });
 
-function updateQuestion() { // Example 1~5 하, 6~10 중, 11~13 상
-    if (num == 13) {
+function updateQuestion() {
+    if (num == 14) {
         questionContainer.style.display = 'none';
         resultContainer.style.display = "block";
 
